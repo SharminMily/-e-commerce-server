@@ -9,10 +9,14 @@ app.use(cors())
 app.use(express.json());
 
 
-
+const productCollection = require("./categoryData.json")
 
 app.get('/', (req, res) => {
     res.send('E commerce server is running')
+})
+
+app.get("/product", (req, res) => {
+    res.send(productCollection)
 })
 
 
